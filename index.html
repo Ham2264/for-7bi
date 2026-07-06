@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Museum of Esraa</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- خلفية النجوم -->
+
+<div id="stars"></div>
+
+<div id="particles"></div>
+
+<!-- شاشة البداية -->
+
+<section id="loading-screen">
+
+<div class="loading-box">
+
+<h1 id="typing"></h1>
+
+<div class="progress-container">
+
+<div id="progress-bar"></div>
+
+</div>
+
+<p id="percent">0%</p>
+
+</div>
+
+</section>
+
+<!-- أبواب المتحف -->
+
+<section id="museum-doors">
+
+<div class="door left-door"></div>
+
+<div class="door right-door"></div>
+
+<div class="museum-title">
+
+<h1>Museum of Esraa</h1>
+
+<p>Dedicated to someone unforgettable.</p>
+
+<button id="enterBtn">
+
+ادخلي المتحف
+
+</button>
+
+</div>
+
+</section>
+
+<!-- المتحف -->
+
+<main id="museum">
+
+<!-- القاعة الأولى -->
+
+<section class="room">
+
+<div class="glass-card center">
+
+<h2>Exhibit #001</h2>
+
+<h1 class="esraa-name">
+
+إسراء
+
+</h1>
+
+<p>
+
+هذه ليست مجرد صفحة...
+
+بل مكان صُنع خصيصًا لشخص واحد.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- القاعة الثانية -->
+
+<section class="room">
+
+<h2 class="section-title">
+
+لماذا بُني هذا المتحف؟
+
+</h2>
+
+<div class="glass-card">
+
+<p id="typingMessage"></p>
+
+</div>
+
+</section>
+
+<!-- القاعة الثالثة -->
+
+<section class="room">
+
+<h2 class="section-title">
+
+اكتشفي البطاقات
+
+</h2>
+
+<div class="cards">
+
+<div class="flip-card">
+
+<div class="flip-inner">
+
+<div class="front">
+
+ابتسامتك
+
+</div>
+
+<div class="back">
+
+تجعل اليوم ألطف.
+
+</div>
+
+</div>
+
+</div>
+
+<div class="flip-card">
+
+<div class="flip-inner">
+
+<div class="front">
+
+وجودك
+
+</div>
+
+<div class="back">
+
+له أثر جميل.
+
+</div>
+
+</div>
+
+</div>
+
+<div class="flip-card">
+
+<div class="flip-inner">
+
+<div class="front">
+
+طيبتك
+
+</div>
+
+<div class="back">
+
+شيء نادر.
+
+</div>
+
+</div>
+
+</div>
+
+<div class="flip-card">
+
+<div class="flip-inner">
+
+<div class="front">
+
+إسراء
+
+</div>
+
+<div class="back">
+
+أفضل قطعة في المتحف.
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- القاعة الرابعة -->
+
+<section class="room">
+
+<h2 class="section-title">
+
+سماء الأمنيات
+
+</h2>
+
+<canvas id="heartCanvas"></canvas>
+
+<h1 id="heartName">
+
+إسراء
+
+</h1>
+
+</section>
+
+<!-- القاعة الخامسة -->
+
+<section class="room">
+
+<div class="rose-box">
+
+<div class="rose">
+
+🌹
+
+</div>
+
+<p>
+
+اضغطي على الوردة
+
+</p>
+
+</div>
+
+</section>
+
+<!-- الرسالة -->
+
+<section class="room">
+
+<div class="letter">
+
+<h2>
+
+إلى إسراء
+
+</h2>
+
+<p id="letterText"></p>
+
+</div>
+
+</section>
+
+<!-- النهاية -->
+
+<section class="room final-room">
+
+<h1>
+
+شكراً لأنك وصلتي للنهاية 🤍
+
+</h1>
+
+<p>
+
+إذا كان هناك شخص يستحق متحفًا كاملًا...
+
+فهو أنتِ.
+
+</p>
+
+<button id="secretBtn">
+
+هناك شيء أخير...
+
+</button>
+
+</section>
+
+</main>
+
+<!-- الشاشة السرية -->
+
+<div id="secretScreen">
+
+<div class="big-heart">
+
+❤
+
+</div>
+
+<h1>
+
+إسراء
+
+</h1>
+
+<p>
+
+You are the masterpiece this museum was built for.
+
+</p>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
