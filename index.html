@@ -7,63 +7,355 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Museum of Esraa</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>🤍 إلى إسراء</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Cairo',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+background:linear-gradient(180deg,#ffe8f5,#fff5fb,#ffeef9);
+
+overflow-x:hidden;
+
+color:#444;
+
+}
+
+/* الخلفية */
+
+.bg{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+overflow:hidden;
+
+z-index:-1;
+
+}
+
+/* العناصر الطائرة */
+
+.float{
+
+position:absolute;
+
+font-size:24px;
+
+animation:floatUp linear infinite;
+
+opacity:.8;
+
+}
+
+@keyframes floatUp{
+
+0%{
+
+transform:translateY(110vh) rotate(0deg);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-20vh) rotate(360deg);
+
+opacity:0;
+
+}
+
+}
+
+/* الأقسام */
+
+section{
+
+display:none;
+
+min-height:100vh;
+
+padding:30px 20px;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+text-align:center;
+
+animation:fade .8s;
+
+}
+
+section.active{
+
+display:flex;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* البطاقات */
+
+.card{
+
+width:100%;
+
+max-width:390px;
+
+background:rgba(255,255,255,.65);
+
+backdrop-filter:blur(12px);
+
+padding:30px;
+
+border-radius:30px;
+
+box-shadow:0 10px 35px rgba(255,105,180,.18);
+
+border:2px solid rgba(255,255,255,.5);
+
+}
+
+/* الصورة */
+
+.avatar{
+
+width:130px;
+
+height:130px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+margin-bottom:20px;
+
+border:5px solid white;
+
+box-shadow:0 0 25px rgba(255,105,180,.3);
+
+}
+
+/* العناوين */
+
+h1{
+
+font-size:32px;
+
+color:#ff4fa3;
+
+margin-bottom:12px;
+
+}
+
+h2{
+
+font-size:25px;
+
+color:#ff5cab;
+
+margin-bottom:15px;
+
+}
+
+p{
+
+font-size:17px;
+
+line-height:2;
+
+color:#555;
+
+}
+
+/* الأزرار */
+
+button{
+
+width:100%;
+
+margin-top:15px;
+
+padding:15px;
+
+border:none;
+
+border-radius:999px;
+
+background:#ff69b4;
+
+color:white;
+
+font-size:16px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+button:hover{
+
+transform:scale(1.05);
+
+background:#ff4fa3;
+
+}
+
+/* الإجابات */
+
+.answer{
+
+background:white;
+
+color:#ff4fa3;
+
+border:2px solid #ffd3ea;
+
+}
+
+.answer:hover{
+
+background:#ffe5f3;
+
+}
+
+/* كتابة الرسالة */
+
+#typing{
+
+white-space:pre-line;
+
+line-height:2.1;
+
+font-size:18px;
+
+font-weight:bold;
+
+color:#333;
+
+min-height:260px;
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-<!-- خلفية النجوم -->
+<div class="bg" id="bg"></div>
 
-<div id="stars"></div>
+<!-- البداية -->
 
-<div id="particles"></div>
+<section id="start" class="active">
 
-<!-- شاشة البداية -->
+<div class="card">
 
-<section id="loading-screen">
+<img src="esraa.jpg" class="avatar">
 
-<div class="loading-box">
+<h1>مرحبًا إسراء 🤍</h1>
 
-<h1 id="typing"></h1>
+<p>
 
-<div class="progress-container">
+قبل ما تبدئين...
 
-<div id="progress-bar"></div>
+في شيء بسيط جدًا
 
-</div>
+حبيت أسويه لك.
 
-<p id="percent">0%</p>
+</p>
+
+<button onclick="next('q1')">
+
+ابدئي ✨
+
+</button>
 
 </div>
 
 </section>
+<!-- السؤال الأول -->
 
-<!-- أبواب المتحف -->
+<section id="q1">
 
-<section id="museum-doors">
+<div class="card">
 
-<div class="door left-door"></div>
+<img src="esraa.jpg" class="avatar">
 
-<div class="door right-door"></div>
+<h2>لو عندك أمنية الآن... 🌸</h2>
 
-<div class="museum-title">
+<p>
 
-<h1>Museum of Esraa</h1>
+وش بتكون؟
 
-<p>Dedicated to someone unforgettable.</p>
+</p>
 
-<button id="enterBtn">
+<button class="answer" onclick="next('q2')">
 
-ادخلي المتحف
+أن الكل يكون سعيد 🤍
+
+</button>
+
+<button class="answer" onclick="next('q2')">
+
+أسافر لمكان جميل ✨
+
+</button>
+
+<button class="answer" onclick="next('q2')">
+
+أحتفظ بالناس اللي أحبهم 💖
 
 </button>
 
@@ -71,187 +363,59 @@
 
 </section>
 
-<!-- المتحف -->
+<!-- السؤال الثاني -->
 
-<main id="museum">
+<section id="q2">
 
-<!-- القاعة الأولى -->
+<div class="card">
 
-<section class="room">
+<img src="esraa.jpg" class="avatar">
 
-<div class="glass-card center">
+<h2>وش أكثر شيء يريحك؟ 🌷</h2>
 
-<h2>Exhibit #001</h2>
+<button class="answer" onclick="next('q3')">
 
-<h1 class="esraa-name">
+جلسة هادئة ☕
 
-إسراء
+</button>
 
-</h1>
+<button class="answer" onclick="next('q3')">
+
+طلعة مع ناس أحبهم 🌸
+
+</button>
+
+<button class="answer" onclick="next('q3')">
+
+أسمع كلام لطيف 🤍
+
+</button>
+
+</div>
+
+</section>
+
+<!-- السؤال الثالث -->
+
+<section id="q3">
+
+<div class="card">
+
+<img src="esraa.jpg" class="avatar">
+
+<h2>آخر سؤال يا إسراء 💖</h2>
 
 <p>
 
-هذه ليست مجرد صفحة...
-
-بل مكان صُنع خصيصًا لشخص واحد.
+جاهزة تشوفين السبب الحقيقي لهذا الموقع؟
 
 </p>
 
-</div>
+<button onclick="next('letter')">
 
-</section>
+جاهزة ✨
 
-<!-- القاعة الثانية -->
-
-<section class="room">
-
-<h2 class="section-title">
-
-لماذا بُني هذا المتحف؟
-
-</h2>
-
-<div class="glass-card">
-
-<p id="typingMessage"></p>
-
-</div>
-
-</section>
-
-<!-- القاعة الثالثة -->
-
-<section class="room">
-
-<h2 class="section-title">
-
-اكتشفي البطاقات
-
-</h2>
-
-<div class="cards">
-
-<div class="flip-card">
-
-<div class="flip-inner">
-
-<div class="front">
-
-ابتسامتك
-
-</div>
-
-<div class="back">
-
-تجعل اليوم ألطف.
-
-</div>
-
-</div>
-
-</div>
-
-<div class="flip-card">
-
-<div class="flip-inner">
-
-<div class="front">
-
-وجودك
-
-</div>
-
-<div class="back">
-
-له أثر جميل.
-
-</div>
-
-</div>
-
-</div>
-
-<div class="flip-card">
-
-<div class="flip-inner">
-
-<div class="front">
-
-طيبتك
-
-</div>
-
-<div class="back">
-
-شيء نادر.
-
-</div>
-
-</div>
-
-</div>
-
-<div class="flip-card">
-
-<div class="flip-inner">
-
-<div class="front">
-
-إسراء
-
-</div>
-
-<div class="back">
-
-أفضل قطعة في المتحف.
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- القاعة الرابعة -->
-
-<section class="room">
-
-<h2 class="section-title">
-
-سماء الأمنيات
-
-</h2>
-
-<canvas id="heartCanvas"></canvas>
-
-<h1 id="heartName">
-
-إسراء
-
-</h1>
-
-</section>
-
-<!-- القاعة الخامسة -->
-
-<section class="room">
-
-<div class="rose-box">
-
-<div class="rose">
-
-🌹
-
-</div>
-
-<p>
-
-اضغطي على الوردة
-
-</p>
+</button>
 
 </div>
 
@@ -259,17 +423,21 @@
 
 <!-- الرسالة -->
 
-<section class="room">
+<section id="letter">
 
-<div class="letter">
+<div class="card">
 
-<h2>
+<img src="esraa.jpg" class="avatar">
 
-إلى إسراء
+<h1>إلى إسراء 🤍</h1>
 
-</h2>
+<p id="typing"></p>
 
-<p id="letterText"></p>
+<button onclick="next('end')">
+
+كملي 🌸
+
+</button>
 
 </div>
 
@@ -277,57 +445,153 @@
 
 <!-- النهاية -->
 
-<section class="room final-room">
+<section id="end">
 
-<h1>
+<div class="card">
 
-شكراً لأنك وصلتي للنهاية 🤍
+<img src="esraa.jpg" class="avatar">
 
-</h1>
+<h1>🤍</h1>
 
 <p>
 
-إذا كان هناك شخص يستحق متحفًا كاملًا...
+أتمنى أن هذا الشيء البسيط
 
-فهو أنتِ.
+رسم ابتسامة على وجهك.
+
+هذا كل اللي كنت أتمناه.
+
+🌸
 
 </p>
 
-<button id="secretBtn">
+<button onclick="location.reload()">
 
-هناك شيء أخير...
+إعادة الرحلة ✨
 
 </button>
 
+</div>
+
 </section>
+<script>
 
-</main>
+/* الخلفية المتحركة */
 
-<!-- الشاشة السرية -->
+const bg=document.getElementById("bg");
 
-<div id="secretScreen">
+const icons=[
+"🌸","💖","🦋","✨","🌷","🤍","🎀"
+];
 
-<div class="big-heart">
+setInterval(()=>{
 
-❤
+const item=document.createElement("div");
 
-</div>
+item.className="float";
 
-<h1>
+item.innerHTML=icons[
+Math.floor(Math.random()*icons.length)
+];
 
-إسراء
+item.style.left=Math.random()*100+"vw";
 
-</h1>
+item.style.fontSize=
+(18+Math.random()*22)+"px";
 
-<p>
+item.style.animationDuration=
+(5+Math.random()*4)+"s";
 
-You are the masterpiece this museum was built for.
+bg.appendChild(item);
 
-</p>
+setTimeout(()=>{
 
-</div>
+item.remove();
 
-<script src="script.js"></script>
+},9000);
+
+},220);
+
+/* التنقل */
+
+function next(id){
+
+document.querySelectorAll("section")
+.forEach(s=>{
+
+s.classList.remove("active");
+
+});
+
+document
+.getElementById(id)
+.classList.add("active");
+
+if(id==="letter"){
+
+typeMessage();
+
+}
+
+}
+
+/* الكتابة */
+
+const message=`إسراء...
+
+ما كان فيه مناسبة معينة.
+
+ولا سبب خاص.
+
+بس كنت أبغى أسوي لك شيء مختلف...
+
+شيء كل ما فتحتيه
+
+تتذكرين إن فيه شخص
+
+تعب عليه عشان يشوف ابتسامتك.
+
+أتمنى أيامك كلها تكون جميلة...
+
+وأتمنى مهما صار
+
+تبقين تبتسمين دائمًا.
+
+وجودك جميل...
+
+وهذا الموقع مجرد تذكار بسيط
+
+من شخص يتمنى لك كل خير.
+
+🤍`;
+
+let i=0;
+
+function typeMessage(){
+
+const box=document.getElementById("typing");
+
+if(box.innerHTML!="") return;
+
+function write(){
+
+if(i<message.length){
+
+box.innerHTML+=message.charAt(i);
+
+i++;
+
+setTimeout(write,35);
+
+}
+
+}
+
+write();
+
+}
+
+</script>
 
 </body>
 
